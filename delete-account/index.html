@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>حذف الحساب · Delete Account — sahl | سهل (Mahalet Marhom)</title>
-  <meta name="description" content="Request account and data deletion for the sahl | سهل (Mahalet Marhom) Android app. Bilingual: Arabic and English.">
+  <title>حذف الحساب · Delete Account — sahl | سهل</title>
+  <meta name="description" content="Request account and data deletion for the sahl | سهل Android app. Bilingual: Arabic and English.">
   <style>
     :root {
       --primary: #2563EB;
@@ -172,7 +172,7 @@
     <div class="header">
       <div style="font-size: 40px;">🗑️</div>
       <h1>حذف الحساب · Delete Account</h1>
-      <div class="sub">sahl | سهل (Mahalet Marhom)</div>
+      <div class="sub">sahl | سهل</div>
     </div>
 
     <div class="lang-toggle">
@@ -304,7 +304,7 @@
       <p class="quiet-link"><a href="../">→ Back to Privacy Policy</a></p>
     </div>
 
-    <footer>© sahl | سهل · Mahalet Marhom</footer>
+    <footer>© sahl | سهل</footer>
   </div>
 
   <script>
@@ -338,13 +338,13 @@
       const reason = (data.get('reason') || '').toString().trim();
 
       const subject = lang === 'ar'
-        ? 'طلب حذف حساب — sahl | محلة مرحوم'
-        : 'Account deletion request — sahl | Mahalet Marhom';
+        ? 'طلب حذف حساب — sahl'
+        : 'Account deletion request — sahl';
 
       const lines = lang === 'ar' ? [
         'مرحباً،',
         '',
-        'أرجو حذف حسابي وجميع البيانات المرتبطة به نهائياً من تطبيق sahl | محلة مرحوم.',
+        'أرجو حذف حسابي وجميع البيانات المرتبطة به نهائياً من تطبيق sahl.',
         '',
         '— بيانات الحساب —',
         'الاسم: '   + name,
@@ -358,7 +358,7 @@
       ] : [
         'Hello,',
         '',
-        'Please permanently delete my account and all associated data from the sahl | Mahalet Marhom app.',
+        'Please permanently delete my account and all associated data from the sahl app.',
         '',
         '— Account details —',
         'Name: '   + name,
