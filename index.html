@@ -1,218 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>سياسة الخصوصية - محلة مرحوم</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>سياسة الخصوصية — sahl | سهل (Mahalet Marhom)</title>
+  <meta name="description" content="Privacy policy for the sahl | سهل (Mahalet Marhom) Android app. Bilingual: Arabic and English.">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --accent: #5E35B1;
+      --bg: #F7F8FB;
+      --card: #FFFFFF;
+      --text: #1A1A2E;
+      --muted: #4A4A6A;
+      --border: #E4E6EF;
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Cairo', sans-serif;
-      background: #F5F7FA;
-      color: #1A1A2E;
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
-
-    header {
-      background: linear-gradient(135deg, #3D5AFE, #5E35B1);
-      padding: 48px 20px 40px;
-      text-align: center;
+    .container { max-width: 800px; margin: 0 auto; padding: 24px 20px 64px; }
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
       color: white;
+      padding: 36px 24px;
+      border-radius: 18px;
+      text-align: center;
+      margin-bottom: 24px;
     }
-
-    header .shield {
-      font-size: 64px;
-      margin-bottom: 16px;
-    }
-
-    header h1 {
-      font-size: 24px;
-      font-weight: 900;
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 14px;
-      opacity: 0.75;
-    }
-
-    .container {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 32px 16px 64px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    }
-
-    .card-title {
+    .header h1 { margin: 8px 0 6px; font-size: 22px; }
+    .header .sub { opacity: 0.85; font-size: 14px; }
+    .lang-toggle {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .lang-toggle button {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .lang-toggle button.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
       margin-bottom: 14px;
     }
-
-    .card-title .icon {
-      font-size: 22px;
+    .card h2 {
+      font-size: 17px;
+      margin: 0 0 10px;
+      color: var(--primary-dark);
     }
-
-    .card-title h2 {
-      font-size: 16px;
-      font-weight: 700;
-      color: #1A1A2E;
-    }
-
-    .card p, .card ul {
-      font-size: 14px;
-      line-height: 1.9;
-      color: #444;
-    }
-
-    .card ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .card ul li::before {
-      content: "• ";
-      color: #3D5AFE;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 13px;
-      color: #999;
-    }
+    .card p, .card ul { margin: 0 0 8px; color: var(--muted); }
+    .card ul { padding-inline-start: 22px; }
+    .lang { display: none; }
+    .lang.active { display: block; }
+    html[lang="en"] { direction: ltr; }
+    html[lang="ar"] { direction: rtl; }
+    a { color: var(--primary); }
+    footer { text-align: center; color: var(--muted); margin-top: 32px; font-size: 13px; }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <div style="font-size: 40px;">🛡️</div>
+      <h1>سياسة الخصوصية · Privacy Policy</h1>
+      <div class="sub">sahl | سهل (Mahalet Marhom)</div>
+      <div class="sub">آخر تحديث · Last updated: 24 May 2026</div>
+    </div>
 
-<header>
-  <div class="shield">🛡️</div>
-  <h1>سياسة الخصوصية والاستخدام<br/>تطبيق محلة مرحوم</h1>
-  <p>آخر تحديث: فبراير 2026</p>
-</header>
+    <div class="lang-toggle" role="tablist" aria-label="Language">
+      <button id="btn-ar" class="active" onclick="setLang('ar')">العربية</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
 
-<div class="container">
+    <!-- ─────────────────── Arabic ─────────────────── -->
+    <div id="ar" class="lang active">
+      <div class="card">
+        <h2>1) مقدمة</h2>
+        <p>تطبيق <b>sahl | سهل</b> (المعروف باسم "محلة مرحوم") منصة مجتمعية محلية لنشر الأخبار والإعلانات والمفقودات وعروض البيع والشراء وتقييم الخدمات داخل حدود الحي أو القرية.</p>
+        <p>باستخدامك للتطبيق فإنك توافق على ممارسات جمع البيانات الموضحة في هذه السياسة.</p>
+      </div>
 
-  <div class="card">
-    <div class="card-title"><span class="icon">ℹ️</span><h2>مقدمة</h2></div>
-    <p>يقدم تطبيق محلة مرحوم منصة مجتمعية لنشر الأخبار والإعلانات والعروض والمفقودات.<br/><br/>
-    باستخدامك للتطبيق فإنك توافق على سياسة الخصوصية هذه.</p>
+      <div class="card">
+        <h2>2) بيانات الحساب التي نجمعها</h2>
+        <ul>
+          <li>الاسم الكامل أو اسم النشاط</li>
+          <li>البريد الإلكتروني</li>
+          <li>رقم الهاتف الأساسي (وأرقام إضافية لمقدمي الخدمات)</li>
+          <li>العنوان النصي أو موقع النشاط</li>
+          <li>صورة الملف الشخصي أو صورة واجهة المتجر</li>
+          <li>نوع الحساب (مستخدم عادي / مقدم خدمة) والمهنة</li>
+          <li>كلمة المرور تُخزَّن بشكل آمن لدى Firebase Authentication ولا يصل إليها التطبيق بشكل مباشر.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>3) الصور والكاميرا والميكروفون</h2>
+        <ul>
+          <li><b>الكاميرا</b> — لالتقاط الصور المُرفقة بالمنشورات والملف الشخصي وصور المنتجات.</li>
+          <li><b>مكتبة الصور والفيديو</b> — لاختيار صور موجودة على الجهاز.</li>
+          <li><b>الميكروفون</b> — لتسجيل الرسائل الصوتية في المحادثات فقط، ولا يتم التسجيل إلا أثناء الضغط على زر التسجيل.</li>
+          <li>تُرفع الصور والمقاطع الصوتية إلى مخزن Supabase Storage عبر اتصال مشفر (HTTPS).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>4) بيانات الموقع</h2>
+        <p>نطلب صلاحية الموقع لاختيار حيِّك تلقائياً من خريطة الأحياء المتاحة. تُستخدم الإحداثيات فقط للحظة الاختيار لتحديد أقرب حي، ولا تُخزَّن الإحداثيات الدقيقة على خوادمنا.</p>
+        <p>قد نستخدم خدمة Google Maps Geocoding (أو OpenStreetMap Nominatim كبديل) لترجمة الإحداثيات إلى اسم منطقة. لا يتم تتبع موقعك في الخلفية ولا يتم بيع بيانات الموقع لأي طرف ثالث.</p>
+      </div>
+
+      <div class="card">
+        <h2>5) الرسائل والمحادثات</h2>
+        <p>يحفظ التطبيق رسائلك الخاصة مع المستخدمين الآخرين في قاعدة بيانات Supabase حتى تتمكن من قراءتها من أي جهاز. كما تُخزَّن نسخة محلية مؤقتة على الجهاز لتسريع التحميل والعمل دون اتصال.</p>
+        <p>الرسائل ليست مشفرة من طرف إلى طرف (end-to-end). يمكن للمشرفين الوصول إلى الرسائل فقط عند التحقيق في بلاغات إساءة الاستخدام.</p>
+      </div>
+
+      <div class="card">
+        <h2>6) المحتوى العام</h2>
+        <p>أي محتوى تنشره — مثل المنشورات والصور والإعلانات وتقييمات الخدمات والتعليقات والتفاعلات — يُعرض على باقي المستخدمين داخل نفس الحي (وأحياناً حي مجاور إذا اخترت ذلك).</p>
+        <p>أنت مسؤول بالكامل عن المحتوى الذي تنشره. يحق لنا حذف أي محتوى يخالف شروط الاستخدام دون إشعار مسبق.</p>
+      </div>
+
+      <div class="card">
+        <h2>7) الإشعارات</h2>
+        <p>نستخدم Firebase Cloud Messaging (FCM) لإرسال الإشعارات الفورية مثل المنشورات الجديدة والردود على تعليقاتك والإعجابات والرسائل الواردة.</p>
+        <p>يتم تخزين رمز الجهاز (FCM token) في حسابك لإرسال الإشعارات لجهازك فقط. تُرسَل الإشعارات عبر خدمة Cloudflare Workers تقوم بالتحقق من هوية المرسل قبل التمرير إلى FCM.</p>
+        <p>يمكنك تعطيل أنواع الإشعارات من شاشة الإعدادات.</p>
+      </div>
+
+      <div class="card">
+        <h2>8) تقارير الأعطال والأداء</h2>
+        <p>نستخدم Firebase Crashlytics لجمع تقارير الأعطال تلقائياً عند حدوث خطأ في التطبيق. تشمل هذه التقارير معلومات تقنية مثل نوع الجهاز وإصدار نظام التشغيل ونسخة التطبيق، ولا تشمل محتوى حسابك أو رسائلك.</p>
+      </div>
+
+      <div class="card">
+        <h2>9) مزودو الخدمات الذين نستخدمهم</h2>
+        <p>لا نبيع بياناتك. ولكنّا نشاركها مع مزودي الخدمات التاليين بقدر ما هو لازم لتشغيل التطبيق:</p>
+        <ul>
+          <li>Firebase (Google LLC) — المصادقة، الإشعارات، تقارير الأعطال</li>
+          <li>Supabase (Supabase Inc) — قاعدة البيانات والتخزين والرسائل الفورية</li>
+          <li>Cloudflare Workers (Cloudflare Inc) — إرسال الإشعارات</li>
+          <li>Google Maps Geocoding (اختياري) — تحويل الإحداثيات إلى أسماء مناطق</li>
+          <li>OpenStreetMap Nominatim — البديل المجاني للترميز الجغرافي</li>
+          <li>Google Sign-In — تسجيل الدخول الاختياري عبر حساب جوجل</li>
+        </ul>
+        <p>قد نُفصح عن بيانات معينة استجابةً لطلب قانوني صادر عن جهة مختصة.</p>
+      </div>
+
+      <div class="card">
+        <h2>10) أمان البيانات</h2>
+        <ul>
+          <li>جميع الاتصالات مع خوادمنا مشفرة بـ HTTPS / TLS.</li>
+          <li>كلمات المرور مُدارة من قِبَل Firebase Authentication ولا تُخزَّن لدينا.</li>
+          <li>نطبق سياسات صلاحيات صفوف (Row-Level Security) لتقييد الوصول إلى بياناتك على مستوى قاعدة البيانات.</li>
+          <li>وصول المشرفين الإداريين محدود ومُسجَّل.</li>
+        </ul>
+        <p>لا يوجد نظام آمن بنسبة 100٪ — في حال اكتشاف اختراق سنخطر المستخدمين المتضررين وفقاً للقانون المعمول به.</p>
+      </div>
+
+      <div class="card">
+        <h2>11) الاحتفاظ بالبيانات</h2>
+        <p>نحتفظ ببيانات حسابك ما دام الحساب مفعّلاً. عند حذف الحساب يتم حذف جميع بياناتك الشخصية والمنشورات والصور والمحادثات بشكل نهائي خلال 30 يوماً على الأكثر، ما لم يكن هناك التزام قانوني بحفظ بعض السجلات لفترة محددة.</p>
+      </div>
+
+      <div class="card" id="ar-delete">
+        <h2>12) حذف الحساب</h2>
+        <p>يمكنك حذف حسابك في أي وقت من داخل التطبيق:<br>
+          <b>الإعدادات ← حذف الحساب</b></p>
+        <p>أو من خلال <a href="delete-account/?lang=ar"><b>نموذج طلب الحذف الإلكتروني</b></a> إذا تعذّر عليك تسجيل الدخول. سنحذف الحساب يدوياً خلال 30 يوماً.</p>
+        <p>عند الحذف:</p>
+        <ul>
+          <li>تُلغى صلاحية الحساب فوراً</li>
+          <li>تُحذف جميع البيانات الشخصية والمنشورات والصور والمحادثات</li>
+          <li>لا يمكن استعادة الحساب أو محتواه بعد الحذف.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>13) حقوقك</h2>
+        <p>يحق لك الاطلاع على بياناتك أو تصحيحها أو طلب حذفها. للمستخدمين داخل الاتحاد الأوروبي والمملكة المتحدة، تنطبق حقوق إضافية تحت لوائح GDPR / UK GDPR، بما في ذلك حق نقل البيانات والاعتراض على بعض عمليات المعالجة.</p>
+        <p>لممارسة هذه الحقوق راسلنا على البريد المذكور أدناه.</p>
+      </div>
+
+      <div class="card">
+        <h2>14) حماية الأطفال</h2>
+        <p>التطبيق غير مخصص للأطفال دون سن 13 عاماً. لا نجمع بياناتٍ بصورة متعمَّدة من الأطفال دون هذه السن. إذا اكتشفنا أن حساباً يخص طفلاً، نقوم بحذفه فوراً.</p>
+      </div>
+
+      <div class="card">
+        <h2>15) تحديث هذه السياسة</h2>
+        <p>قد نقوم بتحديث هذه السياسة من وقت لآخر. ستُنشر النسخة المحدّثة داخل التطبيق وعلى صفحة السياسة العامة، ويُحدَّث تاريخ آخر تعديل في الأعلى.</p>
+      </div>
+
+      <div class="card">
+        <h2>16) اتصل بنا</h2>
+        <p>لأي استفسار حول الخصوصية أو طلب حذف بيانات أو ممارسة حقوقك:</p>
+        <p>📧 <a href="mailto:mahaletmarhom.support@gmail.com">mahaletmarhom.support@gmail.com</a></p>
+        <p>نرد على طلبات الخصوصية خلال 30 يوماً.</p>
+      </div>
+    </div>
+
+    <!-- ─────────────────── English ─────────────────── -->
+    <div id="en" class="lang">
+      <div class="card">
+        <h2>1) Introduction</h2>
+        <p><b>sahl | سهل</b> (also known as "Mahalet Marhom") is a local community platform for posting news, classifieds, lost-and-found, marketplace listings, and service ratings — scoped to your neighbourhood or village.</p>
+        <p>By using the app, you agree to the data-handling practices described in this policy.</p>
+      </div>
+
+      <div class="card">
+        <h2>2) Account data we collect</h2>
+        <ul>
+          <li>Full name or business name</li>
+          <li>Email address</li>
+          <li>Primary phone number (plus additional numbers for service providers)</li>
+          <li>Free-text address or business location</li>
+          <li>Profile picture or shop-front photo</li>
+          <li>Account type (regular user vs. service provider) and job</li>
+          <li>Password (stored securely by Firebase Authentication; the app itself never sees the plaintext)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>3) Photos, camera, and microphone</h2>
+        <ul>
+          <li><b>Camera</b> — to capture photos attached to posts, your profile, and product listings.</li>
+          <li><b>Photo and video library</b> — to pick existing images from your device.</li>
+          <li><b>Microphone</b> — used only for recording voice messages in chat, and only while the record button is held.</li>
+          <li>Photos and audio are uploaded to Supabase Storage over an encrypted (HTTPS) connection.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>4) Location data</h2>
+        <p>We request location permission so you can auto-select your neighbourhood from the available map. Coordinates are used only at the moment of selection to find the nearest neighbourhood — we do not store precise GPS coordinates on our servers.</p>
+        <p>We may pass coordinates to Google Maps Geocoding (or OpenStreetMap Nominatim as a fallback) to translate them into a place name. Your location is never tracked in the background and is never sold to any third party.</p>
+      </div>
+
+      <div class="card">
+        <h2>5) Messages and chat</h2>
+        <p>Your private messages with other users are stored in Supabase so you can read them on any device. A temporary local copy is cached on your device for faster loading and offline access.</p>
+        <p>Messages are not end-to-end encrypted. Administrators may access messages only when investigating abuse reports.</p>
+      </div>
+
+      <div class="card">
+        <h2>6) Public content</h2>
+        <p>Any content you post — including posts, photos, classifieds, service ratings, comments, and reactions — is visible to other users in the same neighbourhood (and optionally an adjacent neighbourhood, if you opt in).</p>
+        <p>You are fully responsible for the content you publish. We reserve the right to remove any content that violates our terms without prior notice.</p>
+      </div>
+
+      <div class="card">
+        <h2>7) Push notifications</h2>
+        <p>We use Firebase Cloud Messaging (FCM) to deliver push notifications such as new posts, replies to your comments, likes, and incoming messages.</p>
+        <p>A device token (FCM token) is stored on your account so notifications can be routed to your device. Notifications are dispatched through a Cloudflare Workers service that verifies the sender's identity before forwarding to FCM.</p>
+        <p>You can disable notification categories from the Settings screen.</p>
+      </div>
+
+      <div class="card">
+        <h2>8) Crash reports and diagnostics</h2>
+        <p>We use Firebase Crashlytics to collect automatic crash reports when the app encounters an error. These reports include technical information such as device model, OS version, and app version — they do not include the contents of your account or your messages.</p>
+      </div>
+
+      <div class="card">
+        <h2>9) Third-party service providers</h2>
+        <p>We do not sell your data. We share it with the following service providers only as needed to operate the app:</p>
+        <ul>
+          <li>Firebase (Google LLC) — authentication, push notifications, crash reporting</li>
+          <li>Supabase (Supabase Inc) — database, file storage, realtime messaging</li>
+          <li>Cloudflare Workers (Cloudflare Inc) — notification dispatch</li>
+          <li>Google Maps Geocoding (optional) — converting coordinates to place names</li>
+          <li>OpenStreetMap Nominatim — free fallback geocoder</li>
+          <li>Google Sign-In — optional sign-in via Google account</li>
+        </ul>
+        <p>We may disclose specific data in response to a lawful request from a competent authority.</p>
+      </div>
+
+      <div class="card">
+        <h2>10) Data security</h2>
+        <ul>
+          <li>All communication with our servers is encrypted with HTTPS / TLS.</li>
+          <li>Passwords are managed by Firebase Authentication and are never stored by us.</li>
+          <li>We enforce Row-Level Security policies in the database to restrict access to your data.</li>
+          <li>Administrator access is limited and logged.</li>
+        </ul>
+        <p>No system is 100% secure — in the event of a breach we will notify affected users as required by applicable law.</p>
+      </div>
+
+      <div class="card">
+        <h2>11) Data retention</h2>
+        <p>We retain your account data as long as the account is active. When the account is deleted, all your personal data, posts, photos, and conversations are permanently deleted within 30 days at the latest — unless we are required by law to retain specific records for a defined period.</p>
+      </div>
+
+      <div class="card" id="en-delete">
+        <h2>12) Account deletion</h2>
+        <p>You can delete your account at any time from inside the app:<br>
+          <b>Settings → Delete account</b></p>
+        <p>Or use the <a href="delete-account/?lang=en"><b>online deletion request form</b></a> if you cannot sign in. We will delete the account manually within 30 days.</p>
+        <p>When deleted:</p>
+        <ul>
+          <li>The account is invalidated immediately</li>
+          <li>All personal data, posts, photos, and conversations are removed</li>
+          <li>The account and its content cannot be restored.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>13) Your rights</h2>
+        <p>You have the right to access, correct, or request deletion of your data. Users in the EU and UK have additional rights under GDPR / UK GDPR, including data portability and the right to object to certain processing.</p>
+        <p>To exercise these rights, contact us at the email below.</p>
+      </div>
+
+      <div class="card">
+        <h2>14) Children's privacy</h2>
+        <p>The app is not intended for children under 13. We do not knowingly collect data from children under this age. If we discover an account belonging to a child, we will delete it immediately.</p>
+      </div>
+
+      <div class="card">
+        <h2>15) Updates to this policy</h2>
+        <p>We may update this policy from time to time. The updated version will be published inside the app and on the public policy page, with the "last updated" date at the top reflecting the change.</p>
+      </div>
+
+      <div class="card">
+        <h2>16) Contact us</h2>
+        <p>For any privacy question, data-deletion request, or to exercise your rights:</p>
+        <p>📧 <a href="mailto:mahaletmarhom.support@gmail.com">mahaletmarhom.support@gmail.com</a></p>
+        <p>We respond to privacy requests within 30 days.</p>
+      </div>
+    </div>
+
+    <footer>© sahl | سهل · Mahalet Marhom</footer>
   </div>
 
-  <div class="card">
-    <div class="card-title"><span class="icon">📋</span><h2>البيانات التي نجمعها</h2></div>
-    <ul>
-      <li>الاسم والبريد الإلكتروني عبر Firebase Auth</li>
-      <li>رقم الهاتف</li>
-      <li>صورة الملف الشخصي</li>
-      <li>المنشورات والصور التي ترفعها</li>
-      <li>معلومات التواصل التي تضيفها</li>
-      <li>الإعجابات والتفاعلات</li>
-      <li>بيانات تقنية مثل نوع الجهاز وIP</li>
-      <li>Advertising ID بسبب AdMob</li>
-      <li>Push Token لإرسال الإشعارات</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">✅</span><h2>كيفية استخدام البيانات</h2></div>
-    <ul>
-      <li>إنشاء وإدارة الحساب</li>
-      <li>عرض المحتوى داخل المجتمع</li>
-      <li>تمكين الإعجابات والتفاعل</li>
-      <li>إرسال الإشعارات</li>
-      <li>تحسين الأداء</li>
-      <li>منع إساءة الاستخدام</li>
-      <li>عرض الإعلانات عبر AdMob</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">🌐</span><h2>المحتوى العام</h2></div>
-    <p>أي محتوى تنشره (أخبار، إعلانات، صور، معلومات تواصل) قد يكون مرئياً لباقي المستخدمين داخل التطبيق.<br/><br/>
-    أنت مسؤول بالكامل عن المحتوى الذي تنشره.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">☁️</span><h2>تخزين الصور (Cloudinary)</h2></div>
-    <p>يتم تخزين الصور عبر خدمة Cloudinary بشكل مشفر.<br/>
-    لا يتم بيع الصور أو مشاركتها خارج إطار تشغيل التطبيق.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">📢</span><h2>الإعلانات (Google AdMob)</h2></div>
-    <p>يستخدم التطبيق Google AdMob لعرض الإعلانات.<br/><br/>
-    قد يتم جمع Advertising ID أو معرف الجهاز لعرض إعلانات مخصصة أو غير مخصصة.<br/><br/>
-    يمكنك التحكم في الإعلانات من إعدادات جهازك.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">🔗</span><h2>مشاركة البيانات</h2></div>
-    <p>لا نبيع بيانات المستخدمين.<br/><br/>قد تتم مشاركة البيانات مع:</p>
-    <ul>
-      <li>Firebase (Auth & Firestore)</li>
-      <li>Cloudinary</li>
-      <li>Google AdMob</li>
-      <li>عند طلب قانوني رسمي</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">🔒</span><h2>أمان البيانات</h2></div>
-    <ul>
-      <li>نستخدم HTTPS وتشفير قواعد البيانات</li>
-      <li>نقيد الوصول الإداري</li>
-      <li>نراقب الأنشطة المشبوهة</li>
-    </ul>
-    <p style="margin-top:10px">لا يوجد نظام آمن بنسبة 100٪.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">🗑️</span><h2>حذف الحساب</h2></div>
-    <p>يمكنك حذف حسابك من:<br/><strong>الإعدادات ← حذف الحساب</strong><br/><br/>عند الحذف:</p>
-    <ul>
-      <li>يتم تعطيل الحساب فوراً</li>
-      <li>حذف البيانات الشخصية</li>
-      <li>حذف الصور والمنشورات</li>
-    </ul>
-    <p style="margin-top:10px">لا يمكن استعادة الحساب بعد الحذف.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">👶</span><h2>حماية الأطفال</h2></div>
-    <p>التطبيق غير مخصص لمن هم دون 13 عاماً.<br/>
-    في حال اكتشاف بيانات لطفل سيتم حذفها فوراً.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">🔄</span><h2>تحديث السياسة</h2></div>
-    <p>قد نقوم بتحديث السياسة عند الحاجة.<br/>
-    سيتم نشر أي تحديث داخل التطبيق.</p>
-  </div>
-
-  <div class="card">
-    <div class="card-title"><span class="icon">📧</span><h2>اتصل بنا</h2></div>
-    <p>📧 mahaletmarhom.support@gmail.com<br/>
-    نرد على استفسارات الخصوصية خلال 30 يومًا.</p>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 محلة مرحوم — جميع الحقوق محفوظة
-</footer>
-
+  <script>
+    function setLang(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      document.getElementById('ar').classList.toggle('active', lang === 'ar');
+      document.getElementById('en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      // Persist + deep-link
+      try { localStorage.setItem('mahala_privacy_lang', lang); } catch (e) {}
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState({}, '', url);
+    }
+    // Init from ?lang= or localStorage; default Arabic
+    (function () {
+      const fromUrl = new URL(location.href).searchParams.get('lang');
+      const stored = (() => { try { return localStorage.getItem('mahala_privacy_lang'); } catch (e) { return null; } })();
+      const lang = (fromUrl || stored) === 'en' ? 'en' : 'ar';
+      setLang(lang);
+    })();
+  </script>
 </body>
 </html>
