@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>حذف الحساب · Delete Account — sahl | سهل (Mahalet Marhom)</title>
+  <meta name="description" content="Request account and data deletion for the sahl | سهل (Mahalet Marhom) Android app. Bilingual: Arabic and English.">
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --danger: #DC2626;
+      --danger-dark: #991B1B;
+      --accent: #5E35B1;
+      --bg: #F7F8FB;
+      --card: #FFFFFF;
+      --text: #1A1A2E;
+      --muted: #4A4A6A;
+      --border: #E4E6EF;
+      --input-bg: #FFFFFF;
+      --warning-bg: #FFF7ED;
+      --warning-border: #FDBA74;
+      --warning-text: #9A3412;
+      --success-bg: #ECFDF5;
+      --success-border: #6EE7B7;
+      --success-text: #065F46;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
+    .header {
+      background: linear-gradient(135deg, var(--danger) 0%, var(--danger-dark) 100%);
+      color: white;
+      padding: 32px 24px;
+      border-radius: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 { margin: 8px 0 6px; font-size: 22px; }
+    .header .sub { opacity: 0.9; font-size: 14px; }
+
+    .lang-toggle {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .lang-toggle button {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .lang-toggle button.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 16px;
+    }
+    .warning {
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      color: var(--warning-text);
+      padding: 14px 18px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    .warning b { color: var(--warning-text); }
+    .success {
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      color: var(--success-text);
+      padding: 14px 18px;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 14px;
+      display: none;
+    }
+    .success.show { display: block; }
+
+    h2 { font-size: 17px; margin: 0 0 12px; color: var(--primary-dark); }
+    p { margin: 0 0 10px; color: var(--muted); }
+    ul { padding-inline-start: 22px; color: var(--muted); margin: 0 0 10px; }
+
+    form label {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      margin: 14px 0 6px;
+      color: var(--text);
+    }
+    form label .req { color: var(--danger); }
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      background: var(--input-bg);
+      color: var(--text);
+    }
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    form textarea { min-height: 90px; resize: vertical; }
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 12px;
+      background: var(--bg);
+      border-radius: 10px;
+    }
+    .checkbox-row input { margin-top: 4px; flex-shrink: 0; }
+    .checkbox-row label { margin: 0; font-weight: 500; font-size: 14px; }
+
+    button.submit {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px 20px;
+      background: var(--danger);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font: inherit;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    button.submit:hover { background: var(--danger-dark); }
+    button.submit:disabled {
+      background: #B0B0C0;
+      cursor: not-allowed;
+    }
+
+    .lang { display: none; }
+    .lang.active { display: block; }
+    html[lang="en"] { direction: ltr; }
+    html[lang="ar"] { direction: rtl; }
+    a { color: var(--primary); }
+    footer { text-align: center; color: var(--muted); margin-top: 32px; font-size: 13px; }
+    .quiet-link { font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div style="font-size: 40px;">🗑️</div>
+      <h1>حذف الحساب · Delete Account</h1>
+      <div class="sub">sahl | سهل (Mahalet Marhom)</div>
+    </div>
+
+    <div class="lang-toggle">
+      <button id="btn-ar" class="active" onclick="setLang('ar')">العربية</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+
+    <!-- ─────────────────── Arabic ─────────────────── -->
+    <div id="ar" class="lang active">
+      <div class="card">
+        <h2>كيفية حذف حسابك</h2>
+        <p><b>أسرع طريقة:</b> من داخل التطبيق ← الإعدادات ← حذف الحساب. سيتم الحذف الفوري.</p>
+        <p><b>إذا تعذّر عليك تسجيل الدخول</b> (مثل نسيان كلمة المرور أو فقدان الجهاز)، املأ النموذج أدناه وسنحذف حسابك يدوياً خلال 30 يوماً.</p>
+      </div>
+
+      <div class="warning">
+        ⚠ <b>هذا الإجراء نهائي ولا يمكن التراجع عنه.</b> سيتم حذف جميع منشوراتك وصورك ومحادثاتك وتقييماتك وحسابك بالكامل. لن تتمكن من استرجاع أي محتوى بعد الحذف.
+      </div>
+
+      <div class="card">
+        <h2>ما الذي يُحذف؟</h2>
+        <ul>
+          <li>بيانات حسابك (الاسم، البريد، الهاتف، العنوان)</li>
+          <li>صورة الملف الشخصي وصور المتجر</li>
+          <li>جميع المنشورات والإعلانات والمفقودات</li>
+          <li>جميع التعليقات والإعجابات والتقييمات</li>
+          <li>جميع المحادثات والرسائل الصوتية</li>
+          <li>جميع الصور والمقاطع الصوتية المرفوعة</li>
+          <li>اشتراكات الإشعارات</li>
+        </ul>
+        <p>قد نحتفظ بسجلات تقنية محدودة (مثل سجلات الأمان) لفترة قصيرة إذا اقتضى ذلك التزام قانوني.</p>
+      </div>
+
+      <div class="card">
+        <h2>نموذج طلب الحذف</h2>
+        <p>املأ البيانات التالية ليتمكن فريق الدعم من التحقق من هويتك وحذف حسابك:</p>
+        <form id="form-ar" onsubmit="return submitForm(event, 'ar')">
+          <label>الاسم الكامل المسجَّل في التطبيق <span class="req">*</span></label>
+          <input type="text" name="name" required>
+
+          <label>البريد الإلكتروني المستخدم لتسجيل الدخول <span class="req">*</span></label>
+          <input type="email" name="email" required>
+
+          <label>رقم الهاتف المسجَّل <span class="req">*</span></label>
+          <input type="tel" name="phone" required placeholder="01xxxxxxxxx">
+
+          <label>سبب الحذف (اختياري)</label>
+          <textarea name="reason" placeholder="نقدّر إخبارنا بسبب الحذف لتحسين الخدمة"></textarea>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="confirm-ar" name="confirm" required>
+            <label for="confirm-ar">أؤكد أنني صاحب الحساب وأن هذا الإجراء نهائي ولا يمكن التراجع عنه.</label>
+          </div>
+
+          <button type="submit" class="submit">إرسال طلب الحذف</button>
+        </form>
+        <div class="success" id="success-ar">
+          ✓ تم فتح برنامج البريد الإلكتروني. اضغط على "إرسال" داخل البرنامج لإكمال الطلب. إذا لم يفتح البرنامج تلقائياً، أرسل بريداً إلكترونياً مباشرةً إلى <a href="mailto:mahaletmarhom.support@gmail.com">mahaletmarhom.support@gmail.com</a> يحتوي على بياناتك.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>المدة الزمنية</h2>
+        <p>سيتم حذف حسابك خلال 30 يوماً من تاريخ تأكيد طلبك. ستتلقى رد تأكيد على البريد الإلكتروني خلال 7 أيام عمل.</p>
+      </div>
+
+      <p class="quiet-link"><a href="../">→ العودة لسياسة الخصوصية</a></p>
+    </div>
+
+    <!-- ─────────────────── English ─────────────────── -->
+    <div id="en" class="lang">
+      <div class="card">
+        <h2>How to delete your account</h2>
+        <p><b>Fastest path:</b> Inside the app → Settings → Delete account. Deletion is immediate.</p>
+        <p><b>If you cannot sign in</b> (e.g. you forgot the password or lost the device), fill out the form below and we will delete your account manually within 30 days.</p>
+      </div>
+
+      <div class="warning">
+        ⚠ <b>This is permanent and cannot be undone.</b> All your posts, photos, conversations, ratings, and account itself will be deleted. You will not be able to recover any content after deletion.
+      </div>
+
+      <div class="card">
+        <h2>What gets deleted</h2>
+        <ul>
+          <li>Your account data (name, email, phone, address)</li>
+          <li>Profile picture and shop-front photos</li>
+          <li>All posts, classifieds, and lost-and-found entries</li>
+          <li>All comments, reactions, and ratings</li>
+          <li>All conversations and voice messages</li>
+          <li>All uploaded photos and audio</li>
+          <li>Notification subscriptions</li>
+        </ul>
+        <p>We may retain limited technical logs (e.g. security logs) for a short period when required by law.</p>
+      </div>
+
+      <div class="card">
+        <h2>Deletion request form</h2>
+        <p>Fill in the fields below so our support team can verify your identity and delete your account:</p>
+        <form id="form-en" onsubmit="return submitForm(event, 'en')">
+          <label>Full name as registered in the app <span class="req">*</span></label>
+          <input type="text" name="name" required>
+
+          <label>Email used to sign in <span class="req">*</span></label>
+          <input type="email" name="email" required>
+
+          <label>Registered phone number <span class="req">*</span></label>
+          <input type="tel" name="phone" required placeholder="01xxxxxxxxx">
+
+          <label>Reason for deletion (optional)</label>
+          <textarea name="reason" placeholder="We appreciate feedback to improve the service"></textarea>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="confirm-en" name="confirm" required>
+            <label for="confirm-en">I confirm I am the account owner and understand this action is permanent and irreversible.</label>
+          </div>
+
+          <button type="submit" class="submit">Send deletion request</button>
+        </form>
+        <div class="success" id="success-en">
+          ✓ Your email client should have opened. Click "Send" inside it to complete the request. If your email client did not open, send an email directly to <a href="mailto:mahaletmarhom.support@gmail.com">mahaletmarhom.support@gmail.com</a> with your account details.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Timeline</h2>
+        <p>Your account will be deleted within 30 days of confirming your request. You will receive a confirmation email within 7 business days.</p>
+      </div>
+
+      <p class="quiet-link"><a href="../">→ Back to Privacy Policy</a></p>
+    </div>
+
+    <footer>© sahl | سهل · Mahalet Marhom</footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      document.getElementById('ar').classList.toggle('active', lang === 'ar');
+      document.getElementById('en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      try { localStorage.setItem('mahala_delete_lang', lang); } catch (e) {}
+      const url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState({}, '', url);
+    }
+
+    (function () {
+      const fromUrl = new URL(location.href).searchParams.get('lang');
+      const stored = (() => { try { return localStorage.getItem('mahala_delete_lang'); } catch (e) { return null; } })();
+      const lang = (fromUrl || stored) === 'en' ? 'en' : 'ar';
+      setLang(lang);
+    })();
+
+    function submitForm(ev, lang) {
+      ev.preventDefault();
+      const form = ev.target;
+      const data = new FormData(form);
+      const name   = (data.get('name')   || '').toString().trim();
+      const email  = (data.get('email')  || '').toString().trim();
+      const phone  = (data.get('phone')  || '').toString().trim();
+      const reason = (data.get('reason') || '').toString().trim();
+
+      const subject = lang === 'ar'
+        ? 'طلب حذف حساب — sahl | محلة مرحوم'
+        : 'Account deletion request — sahl | Mahalet Marhom';
+
+      const lines = lang === 'ar' ? [
+        'مرحباً،',
+        '',
+        'أرجو حذف حسابي وجميع البيانات المرتبطة به نهائياً من تطبيق sahl | محلة مرحوم.',
+        '',
+        '— بيانات الحساب —',
+        'الاسم: '   + name,
+        'البريد: '   + email,
+        'الهاتف: '   + phone,
+        reason ? ('سبب الحذف: ' + reason) : null,
+        '',
+        'أؤكد أنني صاحب الحساب وأن هذا الإجراء نهائي.',
+        '',
+        'شكراً.',
+      ] : [
+        'Hello,',
+        '',
+        'Please permanently delete my account and all associated data from the sahl | Mahalet Marhom app.',
+        '',
+        '— Account details —',
+        'Name: '   + name,
+        'Email: '  + email,
+        'Phone: '  + phone,
+        reason ? ('Reason: ' + reason) : null,
+        '',
+        'I confirm I am the account owner and understand this is permanent.',
+        '',
+        'Thank you.',
+      ];
+
+      const body = lines.filter(l => l !== null).join('\r\n');
+      const mailto = 'mailto:mahaletmarhom.support@gmail.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body='    + encodeURIComponent(body);
+
+      window.location.href = mailto;
+      document.getElementById('success-' + lang).classList.add('show');
+      return false;
+    }
+  </script>
+</body>
+</html>
